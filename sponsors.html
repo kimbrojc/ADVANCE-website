@@ -1,77 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sponsors</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- keep global files -->
+  <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
+  <script src="https://cdn.lordicon.com/lordicon.js" defer></script>
+
+  <!--
+    Page-scoped CSS:
+    - Scoped under body.page-sponsors so nothing leaks to other pages
+    - Clean white “magazine” card inside a dark site background
+  -->
+  <style>
+    body.page-sponsors .shell{
+      background:#111; padding:28px 0 40px;
+    }
+    body.page-sponsors .card{
+      background:#fff; color:#111; border-radius:14px;
+      padding:24px 20px 26px; box-shadow:0 14px 40px rgba(0,0,0,.35);
+    }
+    body.page-sponsors h1{ margin:6px 0 6px; font-size:clamp(30px,5vw,44px); letter-spacing:.3px; }
+    body.page-sponsors .lede{ margin:0 0 14px; opacity:.9; }
+
+    /* tiers */
+    body.page-sponsors .tier{ margin-top:20px; padding:16px; border-radius:12px; border:1px solid #eee; }
+    body.page-sponsors .tier--platinum{ border-left:6px solid #111; }
+    body.page-sponsors .tier--gold{ border-left:6px solid #C9A227; }
+    body.page-sponsors .tier--silver{ border-left:6px solid #A7A7A7; }
+    body.page-sponsors .tier h2{ margin:0 0 8px; }
+    body.page-sponsors .tier ul{ margin:0; padding-left:1.1rem; }
+    body.page-sponsors .tier li{ margin:4px 0; }
+
+    /* CAB */
+    body.page-sponsors .cab{ margin-top:22px; padding:16px; border-left:4px solid #FFD700; background:#fffef0; border-radius:10px; }
+
+    /* FAQ */
+    body.page-sponsors .faq{ margin-top:22px; }
+    body.page-sponsors .faq details{ background:#fafafa; border:1px solid #eee; border-radius:10px; padding:10px 14px; margin:8px 0; }
+    body.page-sponsors .faq summary{ cursor:pointer; font-weight:600; }
+
+    /* CTA */
+    body.page-sponsors .cta{ margin-top:24px; padding:18px; border:1px dashed #FFD700; border-radius:12px; }
+    body.page-sponsors .cta a{ color:#B8860B; font-weight:700; }
+
+    /* footer icons look tidy even on white card pages */
+    body.page-sponsors footer .social-links lord-icon{ vertical-align:middle; }
+  </style>
 </head>
-<body>
+
+<!-- note the page class to scope styles -->
+<body class="page-sponsors">
+  <!-- header (unchanged layout) -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand-logos">
         <a href="index.html" class="brand" aria-label="ADVANCE home">
-          <img src="images/Logos/Advance Logo.png" alt="ADVANCE logo">
+          <!-- CHANGED: use forward slashes in paths -->
+          <img src="images/Logos/ADVANCE new logo.png" alt="ADVANCE logo" />
         </a>
-        <a href="https://www.uc.edu" class="partner" aria-label="University of Cincinnati">
-          <img src="images/Logos/university_of_cincinnati_logo.svg" alt="UC Logo">
+        <a href="https://www.uc.edu" class="partner" aria-label="University of Cincinnati" target="_blank" rel="noopener">
+          <img src="images/Logos/university_of_cincinnati_logo.svg" alt="UC Logo" />
         </a>
       </div>
+
       <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
         <span class="hamburger" aria-hidden="true"></span>
       </button>
+
       <nav class="site-nav" aria-label="Main Navigation">
         <ul>
           <li><a href="about.html">About</a></li>
           <li><a href="join.html">Join</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="executiveBoard.html">Executive Board</a></li>
-          <li><a href="sponsors.html">Sponsors</a></li>
+          <li><a href="sponsors.html" class="active" aria-current="page">Sponsors</a></li>
           <li><a href="resources.html">Resources</a></li>
         </ul>
       </nav>
     </div>
   </header>
-    <!-- Banner  -->
-  <div class="banner">
+
+  <!-- banner / marquee -->
+  <div class="banner" role="region" aria-label="Site banner">
     <div class="marquee" aria-hidden="true">
       <div class="marquee__inner">
-        <span class="marquee__item">ADVANCE - Where We Are Paving The Way For Tomorrow's Leaders!!!</span>
+        <span class="marquee__item">ADVANCE — Supporting future leaders through partnership</span>
+        <span class="marquee__item">ADVANCE — Supporting future leaders through partnership</span>
       </div>
     </div>
+  </div>
 
+  <!-- page content (white editorial card) -->
+  <main class="shell">
+    <div class="container card">
+      <h1>Our Sponsors</h1>
+      <p class="lede">We’re grateful to the partners who invest in student success, leadership, and community impact.</p>
 
-  
+      <!-- text placeholders (images later) -->
+      <section class="tier tier--platinum" aria-labelledby="platinum">
+        <h2 id="platinum">Platinum</h2>
+        <ul>
+          <li><em>Coming soon.</em></li>
+        </ul>
+      </section>
 
-  <main>
-    <h1>Sponsors</h1>
-    <section>
-      <h2>Corporate Sponsors</h2>
-      <p>List sponsors...</p>
-    </section>
-    <section>
-      <h2>Educational Sponsors</h2>
-      <p>List sponsors...</p>
-    </section>
-    <section>
-      <h2>Corporate Advisory Board</h2>
-      <p>Details...</p>
-    </section>
+      <section class="tier tier--gold" aria-labelledby="gold">
+        <h2 id="gold">Gold</h2>
+        <ul>
+          <li><em>Coming soon.</em></li>
+        </ul>
+      </section>
+
+      <section class="tier tier--silver" aria-labelledby="silver">
+        <h2 id="silver">Silver</h2>
+        <ul>
+          <li><em>Coming soon.</em></li>
+        </ul>
+      </section>
+
+      <!-- Corporate Advisory Board -->
+      <section class="cab" aria-labelledby="cab">
+        <h2 id="cab">Corporate Advisory Board</h2>
+        <p><em>Details coming soon.</em></p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq" aria-labelledby="faq">
+        <h2 id="faq">Sponsorship FAQ</h2>
+        <details>
+          <summary>What benefits do sponsors receive?</summary>
+          <p>Brand visibility on campus, priority access to student talent, speaking opportunities, and collaboration on professional events.</p>
+        </details>
+        <details>
+          <summary>How long does a sponsorship term last?</summary>
+          <p>One academic year, renewable.</p>
+        </details>
+        <details>
+          <summary>How do we get started?</summary>
+          <p>Email us and we’ll share tier options and a short intake form.</p>
+        </details>
+      </section>
+
+      <!-- Contact CTA -->
+      <section class="cta" aria-labelledby="interest">
+        <h2 id="interest">Interested in sponsoring ADVANCE?</h2>
+        <p>Email <a href="mailto:advanceboard@gmail.com">advanceboard@gmail.com</a> to request our sponsorship kit.</p>
+      </section>
+    </div>
   </main>
 
-  <footer> 
+  <!-- footer (lord-icon kept to match your current style) -->
+  <footer>
     <p>&copy; 2025 ADVANCE. All rights reserved.</p>
     <div class="social-links">
-      <a href="https://facebook.com/advance" target="_blank">
-  <img src="images/Logos/facebook logo.jpg" alt="Facebook">
+      <a href="https://facebook.com/advance" target="_blank" rel="noopener" aria-label="Facebook">
+        <lord-icon src="https://cdn.lordicon.com/cxauoejw.json" trigger="hover" colors="primary:#000000,secondary:#ffd700" style="width:40px;height:40px"></lord-icon>
       </a>
-      <a href="https://www.tiktok.com/@advance" target="_blank">
-  <img src="images/Logos/tiktok logo.webp" alt="tiktok">
+      <a href="https://www.tiktok.com/@advance" target="_blank" rel="noopener" aria-label="TikTok">
+        <lord-icon src="https://cdn.lordicon.com/opjtxtkg.json" trigger="hover" colors="primary:#000000,secondary:#ffd700" style="width:40px;height:40px"></lord-icon>
       </a>
-      <a href="https://instagram.com/advance_uc" target="_blank">
-  <img src="images/Logos/instagram icon.png" alt="Instagram">
+      <a href="https://instagram.com/advance_uc" target="_blank" rel="noopener" aria-label="Instagram">
+        <lord-icon src="https://cdn.lordicon.com/cuwcpyqc.json" trigger="hover" colors="primary:#000000,secondary:#ffd700" style="width:40px;height:40px"></lord-icon>
       </a>
+    </div>
   </footer>
 </body>
 </html>
