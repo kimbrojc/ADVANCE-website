@@ -4,64 +4,62 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sponsors</title>
-
-  <!-- keep global files -->
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
   <script src="https://cdn.lordicon.com/lordicon.js" defer></script>
 
-  <!--
-    Page-scoped CSS:
-    - Scoped under body.page-sponsors so nothing leaks to other pages
-    - Clean white “magazine” card inside a dark site background
-  -->
+  <!-- page-only styling (scoped with .page-sponsors) -->
   <style>
-    body.page-sponsors .shell{
-      background:#111; padding:28px 0 40px;
-    }
-    body.page-sponsors .card{
-      background:#fff; color:#111; border-radius:14px;
-      padding:24px 20px 26px; box-shadow:0 14px 40px rgba(0,0,0,.35);
-    }
-    body.page-sponsors h1{ margin:6px 0 6px; font-size:clamp(30px,5vw,44px); letter-spacing:.3px; }
-    body.page-sponsors .lede{ margin:0 0 14px; opacity:.9; }
+    body.page-sponsors main{ padding: 24px 0 40px; }
+    body.page-sponsors h1{ color:#FFD700; margin:8px 0 12px; }
+    body.page-sponsors p.lead{ opacity:.95; margin:0 0 18px; }
 
-    /* tiers */
-    body.page-sponsors .tier{ margin-top:20px; padding:16px; border-radius:12px; border:1px solid #eee; }
-    body.page-sponsors .tier--platinum{ border-left:6px solid #111; }
-    body.page-sponsors .tier--gold{ border-left:6px solid #C9A227; }
-    body.page-sponsors .tier--silver{ border-left:6px solid #A7A7A7; }
-    body.page-sponsors .tier h2{ margin:0 0 8px; }
-    body.page-sponsors .tier ul{ margin:0; padding-left:1.1rem; }
+    /* Tier rows */
+    body.page-sponsors .tiers{
+      display:grid; gap:22px;
+    }
+    body.page-sponsors .tier{
+      border:1px solid rgba(255,215,0,.18);
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      box-shadow:0 10px 24px rgba(0,0,0,.35);
+      padding:16px 16px 12px;
+    }
+    body.page-sponsors .tier h2{
+      margin:0 0 8px; color:#FFD700; font-size:1.25rem;
+    }
+    body.page-sponsors .tier ul{ margin:0; padding-left:20px; }
     body.page-sponsors .tier li{ margin:4px 0; }
 
-    /* CAB */
-    body.page-sponsors .cab{ margin-top:22px; padding:16px; border-left:4px solid #FFD700; background:#fffef0; border-radius:10px; }
-
     /* FAQ */
-    body.page-sponsors .faq{ margin-top:22px; }
-    body.page-sponsors .faq details{ background:#fafafa; border:1px solid #eee; border-radius:10px; padding:10px 14px; margin:8px 0; }
-    body.page-sponsors .faq summary{ cursor:pointer; font-weight:600; }
+    body.page-sponsors details{
+      border:1px solid rgba(255,215,0,.18);
+      border-radius:10px;
+      background:rgba(255,255,255,.03);
+      padding:10px 12px; margin:10px 0;
+    }
+    body.page-sponsors summary{ cursor:pointer; color:#FFD700; font-weight:600; }
+    body.page-sponsors details[open]{ background:rgba(255,255,255,.05); }
 
     /* CTA */
-    body.page-sponsors .cta{ margin-top:24px; padding:18px; border:1px dashed #FFD700; border-radius:12px; }
-    body.page-sponsors .cta a{ color:#B8860B; font-weight:700; }
+    body.page-sponsors .cta{
+      margin-top:16px;
+      border-top:1px dashed rgba(255,215,0,.25);
+      padding-top:14px;
+    }
+    body.page-sponsors .cta a{ color:#FFD700; font-weight:700; }
 
-    /* footer icons look tidy even on white card pages */
-    body.page-sponsors footer .social-links lord-icon{ vertical-align:middle; }
+    /* Social icon spacing */
+    body.page-sponsors footer .social-links lord-icon{margin:0 6px; vertical-align:middle;}
   </style>
 </head>
-
-<!-- note the page class to scope styles -->
 <body class="page-sponsors">
-  <!-- header (unchanged layout) -->
+  <!-- Header (ADVANCE logo is NOT a link now) -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand-logos">
-        <a href="index.html" class="brand" aria-label="ADVANCE home">
-          <!-- CHANGED: use forward slashes in paths -->
+        <div class="brand" aria-label="ADVANCE logo">
           <img src="images/Logos/ADVANCE new logo.png" alt="ADVANCE logo" />
-        </a>
+        </div>
         <a href="https://www.uc.edu" class="partner" aria-label="University of Cincinnati" target="_blank" rel="noopener">
           <img src="images/Logos/university_of_cincinnati_logo.svg" alt="UC Logo" />
         </a>
@@ -88,72 +86,64 @@
   <div class="banner" role="region" aria-label="Site banner">
     <div class="marquee" aria-hidden="true">
       <div class="marquee__inner">
-        <span class="marquee__item">ADVANCE — Supporting future leaders through partnership</span>
-        <span class="marquee__item">ADVANCE — Supporting future leaders through partnership</span>
+        <span class="marquee__item">ADVANCE — Where We Are Paving The Way For Tomorrow's Leaders!!!</span>
+        <span class="marquee__item">ADVANCE — Where We Are Paving The Way For Tomorrow's Leaders!!!</span>
       </div>
     </div>
   </div>
 
-  <!-- page content (white editorial card) -->
-  <main class="shell">
-    <div class="container card">
-      <h1>Our Sponsors</h1>
-      <p class="lede">We’re grateful to the partners who invest in student success, leadership, and community impact.</p>
+  <main>
+    <div class="container">
+      <h1>Sponsors</h1>
+      <p class="lead">We appreciate our partners who help ADVANCE build community, grow leadership, and expand opportunities for students.</p>
 
-      <!-- text placeholders (images later) -->
-      <section class="tier tier--platinum" aria-labelledby="platinum">
-        <h2 id="platinum">Platinum</h2>
-        <ul>
-          <li><em>Coming soon.</em></li>
-        </ul>
-      </section>
+      <!-- Tiers (text placeholders only) -->
+      <div class="tiers">
+        <section class="tier" aria-labelledby="corp-sponsors">
+          <h2 id="corp-sponsors">Corporate Sponsors</h2>
+          <ul>
+            <li><em>Coming soon.</em></li>
+          </ul>
+        </section>
 
-      <section class="tier tier--gold" aria-labelledby="gold">
-        <h2 id="gold">Gold</h2>
-        <ul>
-          <li><em>Coming soon.</em></li>
-        </ul>
-      </section>
+        <section class="tier" aria-labelledby="edu-sponsors">
+          <h2 id="edu-sponsors">Educational Sponsors</h2>
+          <ul>
+            <li><em>Coming soon.</em></li>
+          </ul>
+        </section>
 
-      <section class="tier tier--silver" aria-labelledby="silver">
-        <h2 id="silver">Silver</h2>
-        <ul>
-          <li><em>Coming soon.</em></li>
-        </ul>
-      </section>
+        <section class="tier" aria-labelledby="cab">
+          <h2 id="cab">Corporate Advisory Board</h2>
+          <p><em>Details coming soon.</em></p>
+        </section>
+      </div>
 
-      <!-- Corporate Advisory Board -->
-      <section class="cab" aria-labelledby="cab">
-        <h2 id="cab">Corporate Advisory Board</h2>
-        <p><em>Details coming soon.</em></p>
-      </section>
-
-      <!-- FAQ -->
-      <section class="faq" aria-labelledby="faq">
-        <h2 id="faq">Sponsorship FAQ</h2>
+      <!-- FAQs (kept—cleaner visual with details/summary) -->
+      <section aria-labelledby="faq">
+        <h2 id="faq" style="margin:18px 0 8px;color:#FFD700;">FAQs</h2>
         <details>
-          <summary>What benefits do sponsors receive?</summary>
-          <p>Brand visibility on campus, priority access to student talent, speaking opportunities, and collaboration on professional events.</p>
+          <summary>How do we become a sponsor?</summary>
+          <div>Send a note to <a href="mailto:advanceboard@gmail.com" style="color:#FFD700;">advanceboard@gmail.com</a> and we’ll share options.</div>
         </details>
         <details>
-          <summary>How long does a sponsorship term last?</summary>
-          <p>One academic year, renewable.</p>
-        </details>
-        <details>
-          <summary>How do we get started?</summary>
-          <p>Email us and we’ll share tier options and a short intake form.</p>
+          <summary>Can we sponsor a specific event?</summary>
+          <div>Yes—event sponsorships are available. We’ll match you with the best fit.</div>
         </details>
       </section>
 
-      <!-- Contact CTA -->
-      <section class="cta" aria-labelledby="interest">
-        <h2 id="interest">Interested in sponsoring ADVANCE?</h2>
-        <p>Email <a href="mailto:advanceboard@gmail.com">advanceboard@gmail.com</a> to request our sponsorship kit.</p>
+      <!-- Sponsor CTA -->
+      <section class="cta" aria-labelledby="become-sponsor">
+        <h2 id="become-sponsor" style="margin:10px 0 6px;color:#FFD700;">Interested in sponsoring ADVANCE?</h2>
+        <p>
+          Email
+          <a href="mailto:advanceboard@gmail.com">advanceboard@gmail.com</a>
+          for information.
+        </p>
       </section>
     </div>
   </main>
 
-  <!-- footer (lord-icon kept to match your current style) -->
   <footer>
     <p>&copy; 2025 ADVANCE. All rights reserved.</p>
     <div class="social-links">
